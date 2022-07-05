@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styleXmas.min.css">
+    <title>Xmas WishList</title>
+</head>
+<body class="h-screen w-screen flex flex-col justify-start items-center font-serif text-base">
+    <div class="mt-5">
+    <header class="">
+        <h1 class="text-3xl font-bold tracking-wide text-center bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-green-500">Christmas Wish list</h1>
+    </header>
+        <main>
+            <div class="" id="container">
+                <section class="m-1">
+                    <h3 class="text-center my-2 text-lg font-bold text-white">All I want for Christmas is...</h3>
+                    <form id="toListForm" class="flex flex-col my-3">
+                        <input type="text" placeholder="Add item" id="newText" class="my-2 py-2 pl-2 shadow-md shadow-zinc-300 border border-zinc-400 ">
+                        <input type="submit" value="Add Item" class="cursor-pointer rounded-sm p-0.5 shadow-lg shadow-slate-300 border-2 border-solid border-gray-600 bg-lime-50">
+                    </form>
+                </section>
+                <section class="m-1 mt-7">
+                    <h3 class="text-center my-2 text-lg font-bold text-white">I have wished for...</h3>
+                    <ul id="items" class="my-1 pl-1 list-disc list-inside shadow-md shadow-zinc-300 border bg-slate-50">
+                       
+                    </ul>
+                </section>
+            </div>
+            <section class="open" id="envelope">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+            </section>
+            <button id="send" class="w-full rounded-sm p-0.5 my-3 shadow-lg shadow-slate-300 border-2 border-solid border-gray-600 bg-lime-50">SEND IT TO SANTA</button>
+        </main>
+    </div> 
+    <script src="index.js"></script>
+</body>
+</html>

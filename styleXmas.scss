@@ -1,0 +1,79 @@
+body{
+    background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+}
+
+h1{
+    text-shadow: #3f0d12 .5px .5px;
+}
+
+//envelope variables-colors
+$color-env          : #0077B2;
+$color-env2         : darken($color-env, 3%);
+$color-flap         : darken($color-env, 20%);
+$color-bg           : lighten($color-env, 48%);
+
+$env-border-radius  : 6px;
+$env-width          : 330px;
+$env-height         : 225px;
+$heart-width        : 50px;
+
+//envelope postion sizes
+#envelope{
+    position: relative;
+    width: $env-width;
+    height: $env-height;
+    border-bottom-left-radius: $env-border-radius;
+    border-bottom-right-radius: $env-border-radius;
+    background-color: $color-flap;
+    z-index: -1;
+    box-shadow: 0 4px 20px rgba(0,0,0,.2);
+}
+
+// envelope sides
+.front { 
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+.flap {
+    border-left: ($env-width / 2) solid transparent;
+    border-right: ($env-width / 2) solid transparent;
+    border-bottom: ($env-height / 2) - 8 solid transparent; /* a little smaller */
+    border-top: ($env-height / 2) + 8 solid $color-flap; /* a little larger */
+    transform-origin: top;
+    pointer-events: none;
+}
+.pocket {
+    border-left: ($env-width / 2) solid $color-env;
+    border-right: ($env-width / 2) solid $color-env;
+    border-bottom: ($env-height / 2) solid $color-env2;
+    border-top: ($env-height / 2) solid transparent;
+    border-bottom-left-radius: $env-border-radius;
+    border-bottom-right-radius: $env-border-radius;
+}
+
+//opening and closing animation
+.close .flap {
+    transform: rotateX(0deg);
+    transition: transform .4s .6s ease, z-index 1s;
+    z-index: 5;
+}
+
+.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.down{
+    animation-name: goDown;
+    animation-fill-mode: forwards;
+    animation-duration: .6s;
+    animation-timing-function: linear;
+}
+
+@keyframes goDown{
+    0% {z-index: 5; visibility: visible; transform: translate(0,0);}
+    100% {z-index: -2; visibility: hidden; transform: translate(0,200px);}
+}
