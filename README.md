@@ -23,8 +23,7 @@ Thirdly refresh my CSS animation and get to know an animation library.
 **Challenges within the Project**
 
 1. Using Tailwind CSS. It is really different to shape an input field or a button just with "small" classes. Really different from Bootstrap 5, where there is a btn class and "that's it". I am looking forward to use Tailwind CSS more as it can offers more mixing option within the classes.
-2. DOM manipulation. Always good and challenging to practice DOM manipulation with JS. There is still a mistake in the project I need to figure out in the future (namely deleteing list items should allow to add new items after reaching 3 items on the list).
-
+2. DOM manipulation. Always good and challenging to practice DOM manipulation with JS. The challenge was to add limit for adding item to the list. 
 ## **_What have I learned_**
 Tailwind CSS and Tailwind CSS. Plus animation and DOM.
 
