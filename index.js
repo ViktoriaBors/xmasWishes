@@ -33,7 +33,6 @@ function addItem(event){
     deleteBtn.innerText = "X"
     deleteBtn.className = "delete float-right p-0.5 text-red-900 font-bold"
     newItem.appendChild(deleteBtn)
-    console.log(newItem)
 
     // add new item list with text and X button to UL
     itemList.appendChild(newItem)
