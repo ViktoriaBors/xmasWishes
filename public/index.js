@@ -18,24 +18,26 @@ function addItem(event){
     newItemInputField.disabled = false;
     submit.disabled = false;
     // Add new item - text input as a value
-    // must be inside the fucntion - click event
+    // must be inside the function - click event
     // as a global variable - it would grab the value as a first thing - without written anything inside -gives back nothing
     let newItemInput = newItemInputField.value; 
     
     // create new item
+    let newItemContainer = document.createElement("div")
+    newItemContainer.className = "flex justify-between"
     let newItem = document.createElement("li");
     //add text from input field to li 
     newItem.innerText = newItemInput;
     newItem.className = "oneItem my-1"
-    
+        
     //create the delete button as a child of the new item list
     let deleteBtn = document.createElement("button")
     deleteBtn.innerText = "X"
     deleteBtn.className = "delete float-right p-0.5 text-red-900 font-bold"
-    newItem.appendChild(deleteBtn)
-
+    newItemContainer.append(newItem, deleteBtn)
+    
     // add new item list with text and X button to UL
-    itemList.appendChild(newItem)
+    itemList.appendChild(newItemContainer)
     onList++ //count how many items we have on the list -  add plus one
     newItemInputField.value = ""; // clear the input field
     } else{
@@ -51,7 +53,7 @@ function addItem(event){
 //after adding more items - doesnt grab these items delete button
 // option can be - event delegation
 
-// deleteing items by grabbing the whole ul
+// deleting items by grabbing the whole ul
 let items = document.getElementById("items")
 
 function deleteItem(event){
@@ -75,16 +77,38 @@ function deleteItem(event){
    let sendBtn = document.querySelector("#send")
    let envelope = document.getElementById("envelope")
    let container = document.getElementById("container")
+   
+   function close() {
+       container.classList.add("down")
+       envelope.classList.remove("open");
+       envelope.classList.add("close");
+       sendBtn.disabled = true
+       sendBtn.style.display = "none"
+       envelope.classList.add("animate__animated", "animate__bounceOutUp", "animate__delay-1s")
+       console.log(envelope.classList)
+   }
 
-    send.addEventListener("click", close)
+    send.addEventListener("click", ()=>{
+        let list = document.querySelectorAll(".oneItem")
+        let wishes = []
+        for (let listItem of list){
+            let wish = listItem.innerText;
+            wishes.push(wish)
+        }
+        let email = document.querySelector("#email").value
+
+        let data = {"email": email, "wishes" : wishes}
+
+        fetch("http://localhost:8080/send", { 
+            method: "POST", 
+            headers:
+                {"content-type": "application/json"},
+            body:JSON.stringify(data)}
+            ).then(res=>res.json())
+            .then(data => {
+                console.log(data)
+            })
+
+    })
     
-    function close() {
-        container.classList.add("down")
-        envelope.classList.remove("open");
-        envelope.classList.add("close");
-        sendBtn.disabled = true
-        sendBtn.style.display = "none"
-        envelope.classList.add("animate__animated", "animate__bounceOutUp", "animate__delay-1s")
-        console.log(envelope.classList)
-    }
  
