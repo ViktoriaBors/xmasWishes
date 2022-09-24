@@ -28,6 +28,7 @@ Lastly, get insight to e-mail sending option with NodeJS backend.
 
 1. Using Tailwind CSS. It is really different to shape an input field or a button just with "small" classes. Really different from Bootstrap 5, where there is a btn class and "that's it". I am looking forward to use Tailwind CSS more as it can offers more mixing option within the classes.
 2. DOM manipulation. Always good and challenging to practice DOM manipulation with JS. The challenge was to add limit for adding item to the list. 
+
 **_Update_**
 3. Setting up Nodemailer felt actually pretty simple to set up. I had trouble more with Google Account... And that it let me send emails by an application. In the end the following steps help to unlock the mystery:
 - Enable the 2-step verification on your account (Profile Picture -> Manage your Google Account -> Security -> Signing in to Google -> 2-step verification). So if it is off, click on it and follow the step to turn it on.
@@ -35,6 +36,7 @@ Lastly, get insight to e-mail sending option with NodeJS backend.
 - Use your e-mail and the 16-digit password when writing the code for the transporter.
 ## **_What have I learned_**
 Tailwind CSS and Tailwind CSS. Plus animation and DOM. 
+
 **_Update_**
 Setting up nodemailer to send e-mail via application.
 
