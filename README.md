@@ -33,6 +33,7 @@ Lastly, get insight to e-mail sending option with NodeJS backend.
 - Enable the 2-step verification on your account (Profile Picture -> Manage your Google Account -> Security -> Signing in to Google -> 2-step verification). So if it is off, click on it and follow the step to turn it on.
 - After that go again to the same page - again under the Signing in to Google, click on App-passwords -> Follow the steps and get the 16 digit password.
 - Use your e-mail and the 16-digit password when writing the code for the transporter.
+Moreover I needed to install _dotenv_ package as well and add dotenv.config() in to the server.js
 ## **_What have I learned_**
 Tailwind CSS and Tailwind CSS. Plus animation and DOM. 
 **_Update_**
@@ -41,5 +42,5 @@ Setting up nodemailer to send e-mail via application.
 ## Deployed: 2022. July. / 2022.September
 
 **Please Note**
-
+The e-mail sending feature is only working in localhost and not through the deployed vercel app. 
 
