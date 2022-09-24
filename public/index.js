@@ -85,7 +85,6 @@ function deleteItem(event){
        sendBtn.disabled = true
        sendBtn.style.display = "none"
        envelope.classList.add("animate__animated", "animate__bounceOutUp", "animate__delay-1s")
-       console.log(envelope.classList)
    }
 
     send.addEventListener("click", ()=>{
@@ -99,16 +98,24 @@ function deleteItem(event){
 
         let data = {"email": email, "wishes" : wishes}
 
+        
+        
         fetch("http://localhost:8080/send", { 
             method: "POST", 
             headers:
-                {"content-type": "application/json"},
+            {"content-type": "application/json"},
             body:JSON.stringify(data)}
-            ).then(res=>res.json())
+            ).then(res=>{
+                res.json()
+            })
             .then(data => {
                 console.log(data)
             })
+            
+            close()
+            document.querySelector("#message").innerText = "Your message is sent to Santa"
+            document.querySelector("#sender").classList.add("hidden")
 
-    })
+ })
     
  
